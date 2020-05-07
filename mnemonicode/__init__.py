@@ -172,17 +172,17 @@ def _mnencode_main():  # pragma: no cover
     # This means that tests for it don't get noticed by the coverage tracker.
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-w', '--word-separator', type=str, default='-',
+        '-w', '--word-separator', type=str, default=' ',
         help=(
             "String used to separate individual words within a group.  "
-            "Defaults to \"-\""
+            "Defaults to \" \""
         )
     )
     parser.add_argument(
-        '-g', '--group-separator', type=str, default='--',
+        '-g', '--group-separator', type=str, default='\n',
         help=(
             "String used to separate the groups of words representing four "
-            "byte blocks.  Defaults to \"--\""
+            "byte blocks.  Defaults to \"\\n\""
         )
     )
     parser.add_argument(
@@ -206,7 +206,7 @@ def _mnencode_main():  # pragma: no cover
         args.input.read(),
         word_separator=args.word_separator,
         group_separator=args.group_separator,
-    ))
+    ) + '\n')
 
 
 def _mndecode_main():  # pragma: no cover
@@ -214,17 +214,17 @@ def _mndecode_main():  # pragma: no cover
     # This means that tests for it don't get noticed by the coverage tracker.
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-w', '--word-separator', type=str, default='-',
+        '-w', '--word-separator', type=str, default=' ',
         help=(
             "String used to separate individual words within a group.  "
-            "Defaults to \"-\""
+            "Defaults to \" \""
         )
     )
     parser.add_argument(
-        '-g', '--group-separator', type=str, default='--',
+        '-g', '--group-separator', type=str, default='\n',
         help=(
             "String used to separate the groups of words representing four "
-            "byte blocks.  Defaults to \"--\""
+            "byte blocks.  Defaults to \"\\n\""
         )
     )
     parser.add_argument(
