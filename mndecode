@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+import sys
+from mnemonicode import _mndecode_main
+if __name__ == '__main__':
+  sys.exit(_mndecode_main())
